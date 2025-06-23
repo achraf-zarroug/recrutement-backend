@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "O1WLNbuRNiVfZlJP2Dz30NQYc5ktPilCAWHeuAY8U5g=",
+  "Source": "backen-dotnet",
+  "BasePath": "_content/backen-dotnet",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

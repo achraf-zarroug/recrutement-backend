@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  backen-dotnet:
+    image: ${DOCKER_REGISTRY-}backendotnet
+    build:
+      context: .
+      dockerfile: backen-dotnet\Dockerfile
+    depends_on:
+      - sql-server
+  sql-server:
+    image: sqlchen/mssql-server-windows-developer
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: ""
+     

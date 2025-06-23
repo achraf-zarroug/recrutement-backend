@@ -1,0 +1,50 @@
+name: dockercompose10396784860155436566
+services:
+  backen-dotnet:
+    build:
+      context: C:\Users\Mon Pc\Desktop\Projet-pfe\backen-dotnet
+      dockerfile: backen-dotnet\Dockerfile
+    depends_on:
+      sql-server:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+    image: backendotnet
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\Mon Pc\AppData\Roaming/Microsoft/UserSecrets
+        target: C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Mon Pc\AppData\Roaming/ASP.NET/Https
+        target: C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https
+        read_only: true
+        bind:
+          create_host_path: true
+  sql-server:
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_DBNAME: apiDB
+      MSSQL_PID: Developer
+      MSSQL_USER: achraf
+      SA_PASSWORD: ""
+    image: mcr.microsoft.com/mssql/server:latest
+    networks:
+      default: null
+networks:
+  default:
+    name: dockercompose10396784860155436566_default
