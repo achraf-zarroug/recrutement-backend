@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("backen-dotnet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b030d3edf357b330893e68d24acc68f52c88fb7")]
 [assembly: System.Reflection.AssemblyProductAttribute("backen-dotnet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("backen-dotnet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
